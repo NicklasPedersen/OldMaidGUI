@@ -1,0 +1,45 @@
+﻿<Window x:Class="OldMaidGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OldMaidGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        SizeChanged="Window_SizeChanged">
+    <Grid>
+        <Button Visibility="Hidden" Name="StartButton" Click="StartButton_Click">Start</Button>
+        <DockPanel Visibility="Visible" x:Name="Players">
+            <StackPanel DockPanel.Dock="Top" x:Name="AI">
+                <Label>AI</Label>
+                <local:Hand x:Name="AIHand"></local:Hand>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Bottom" x:Name="Human">
+                <Label>Player</Label>
+                <local:Hand x:Name="HumanHand"></local:Hand>
+            </StackPanel>
+            <Canvas x:Name="EmptyArea"></Canvas>
+            <!--
+             canvas width is (cardAmount - 1) * cardMargin + cardWidth 
+            <Canvas Width="130" DockPanel.Dock="Top" Margin="0,10" Height="60">
+                <Button Width="30" Height="50"></Button>
+                <Button Canvas.Left="20" Width="30" Height="50"></Button>
+                <Button Canvas.Left="40" Width="30" Height="50"></Button>
+                <Button Canvas.Left="60" Width="30" Height="50"></Button>
+                <Button Canvas.Left="80" Width="30" Height="50"></Button>
+                <Button Canvas.Left="100" Width="30" Height="50"></Button>
+            </Canvas>
+            <Canvas x:Name="player0" Width="105" DockPanel.Dock="Bottom" Height="60">
+                <Button Width="30" Height="50"></Button>
+                <Button Canvas.Left="20" Width="30" Height="50"></Button>
+                <Button Canvas.Left="40" Width="30" Height="50"></Button>
+                <Button Canvas.Left="60" Width="30" Height="50"></Button>
+                <Button Canvas.Left="80" Width="30" Height="50"></Button>
+                <Button Canvas.Left="100" Width="30" Height="50"></Button>
+            </Canvas>
+            <Canvas DockPanel.Dock="Top"></Canvas>
+        -->
+        </DockPanel>
+        <Label Visibility="Hidden" x:Name="PlayerResult"></Label>
+    </Grid>
+</Window>
